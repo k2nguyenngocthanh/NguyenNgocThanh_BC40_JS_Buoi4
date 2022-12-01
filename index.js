@@ -50,7 +50,7 @@ function Sapxep(){
     }
 
 }
-/*----------------Bài 2----------------*/
+/*----------------Bài 3----------------*/
 function Dem(){
     var x=document.getElementById("mot").value*1;
     var y=document.getElementById("hai").value*1;
@@ -78,8 +78,38 @@ function Dem(){
     var DemEL = document.getElementById("demso").innerHTML=`<h2 class="mt-5 text-danger text-center">Có: ${DemsochanEL} số chẵn <br />
     Có:${DemsoleEL} số lẻ
     </h2>`;
+}
 
-        
+/*----------------Bài 4----------------*/
+function Kiemtra(){
+    var a=document.getElementById("canhmot").value*1;
+    var b=document.getElementById("canhhai").value*1;
+    var c=document.getElementById("canhba").value*1;
 
+    var kiemtraEL;
 
+    if(a + b <= c || a + c <= b ||  b + c <= a){
+        kiemtraEL=document.getElementById("kt").innerHTML=`<h2 class="mt-5 text-danger text-center">
+        Tam giác không hợp lệ xin kiểm tra lại</h2>`;
+    }
+    else if((a=b)&&(b==c)){
+        kiemtraEL=document.getElementById("kt").innerHTML=`<h2 class="mt-5 text-danger text-center">
+        Đây là tam giác đều </h2>`;
+    }
+      
+			
+    else if(a == b || a == c || b == c){
+        kiemtraEL=document.getElementById("kt").innerHTML=`<h2 class="mt-5 text-danger text-center">
+                Đây là tam giác cân </h2>`;
+    }
+    else if(a*a==b*b+c*c || b*b==a*a+c*c || c*c== a*a+b*b)
+    {
+        kiemtraEL=document.getElementById("kt").innerHTML=`<h2 class="mt-5 text-danger text-center">
+                Đây là tam giác vuông</h2>`;
+    }
+    else{
+        kiemtraEL=document.getElementById("kt").innerHTML=`<h2 class="mt-5 text-danger text-center">
+        Đây là tam giác khác </h2>`;
+
+    }
 }
